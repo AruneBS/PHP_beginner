@@ -1,20 +1,20 @@
 <?php
 // echo '<pre>';
-// print_r($_SERVER);
+// // print_r($_SERVER);
 
-// print_r($_POST);
+// // print_r($_POST);
 
-$request_uri = explode('/', $_SERVER['REQUEST_URI']);
+// $request_uri = explode('/', $_SERVER['REQUEST_URI']);
 
-// print_r($request_uri);
+// // print_r($request_uri);
 
-$file_query =  $request_uri[count($request_uri) -1];
+// $file_query =  $request_uri[count($request_uri) -1];
 
-$result = explode('?' , $file_query);
+// $result = explode('?' , $file_query);
 
-$result=implode('?', $result);
+// $result=implode('?', $result);
 
-print_r($result);
+// print_r($result);
 
 
 
@@ -33,7 +33,7 @@ if(isset($_POST['file_name']) AND $_POST['file_name'] !=''){
 
 $data = scandir($dir);
 
-
+// unset($data[0]);
 ?>
 
 
