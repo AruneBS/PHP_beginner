@@ -1,0 +1,11 @@
+body{
+    background-color: beige;
+    color: black;
+    font-weight: 600;
+    text-align: center;
+}
+
+.main_table{
+    margin: 0 auto;
+    border-collapse: collapse;
+}
