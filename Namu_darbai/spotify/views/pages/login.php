@@ -30,12 +30,12 @@ if (!empty($_POST)) {
 ?>
 
 
-<div class="container col-md-6">
-    <link href="style/style.css" rel="stylesheet">
+
+<form method="POST" class="login">
     <main class="form-signin w-100 m-auto ">
-        <form method="POST">
-            <img class="mb-2" src="img/spotify.png" alt="" width="150" height="150">
-            <h3 class="h3 mb-3 fw-normal">Please log in</h3>
+        <div class="container col-md-6">
+            <!-- <img class="mb-2 text-align: center" src="img/spotify.png" alt="" width="150" height="150"> -->
+            <h3 class="h3 mb-3 fw-normal">Please Log in</h3>
             <div class="form-floating">
                 <input type="name" name="username" class="form-control" placeholder="username" required>
                 <label for="floatingInput">Username</label>
@@ -44,9 +44,7 @@ if (!empty($_POST)) {
                 <input type="password" class="form-control" name="password" placeholder="password" required>
                 <label for="floatingPassword">Password</label>
             </div>
-
-            <button class="w-100 btn btn-lg btn-info" type="submit">Log in</button>
-
-        </form>
+            <button class="w-100 btn btn-lg btn-dark" type="submit">Log in</button>
+        </div>
     </main>
-</div>
+</form>

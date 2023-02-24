@@ -1,0 +1,70 @@
+
+
+
+body{
+    box-sizing: border-box;
+    background-color: whitesmoke;
+    color: black;
+    font-weight: 600;
+}
+
+.login {
+   
+    color: darkorchid;
+    text-align: center;
+    font-weight: 600;
+}
+.login .btn-dark {
+    color: darkorchid;
+  }
+
+.register{
+    text-align: center;
+    font-weight: 600;
+    color: darkorchid;
+}
+
+.playlist{
+    
+    text-align: center;
+
+}
+
+.playlist .table{
+  
+    margin-bottom: none;
+}
+
+.main{
+    display: inline-flex;
+    gap: 70px;
+}
+
+.main .table {
+   
+    border: 0cm;
+}
+.main .table a{
+    color: black;
+}
+.main .table thead{
+    color: darkorchid;
+   
+}
+
+
+/* .create .name{
+    width: 25%;
+    float: left; */
+/* } */
+
+
+aside{
+    float: right;
+    padding-left: 70px;
+    width: 40%;
+}
+
+.admin{
+    color: darkorchid;
+}

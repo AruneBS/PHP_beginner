@@ -25,8 +25,10 @@ $songs = $result->fetch_all(MYSQLI_ASSOC);
 
 
 ?>
+    
+<div class="playlist">
+<h3><span style="color:darkorchid;">Songs in playlist "<?= $list['name']; ?>"</span></h3>
 
-<h1>Songs in playlist "<?= $list['name']; ?>"</h1>
 <table class="table">
     <thead>
         <tr>
@@ -57,3 +59,4 @@ $songs = $result->fetch_all(MYSQLI_ASSOC);
         <?php endforeach; ?>
     </tbody>
 </table>
+</div>

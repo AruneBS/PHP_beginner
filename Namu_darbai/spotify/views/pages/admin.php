@@ -5,14 +5,19 @@ if(empty ($_SESSION ['user'])OR $_SESSION['user']['role']=== '0') {
     exit;
 }
 
-if(!empty($_POST)){
+// if(!empty($_POST)){
+// if(!is_dir)
+
     $query = vsprintf(
         "INSERT INTO songs (title, author, album, year, youtube_link) VALUES ('%s', '%s', '%s', %d, '%s')",
 $_POST
 );
 
     $db->query($query);
-}
+
+    if (isset($_GET['action']) AND $_GET['action']=== 'delete') {
+        $delete = $db->query("DELETE FROM playlist WHERE id = {$_GET['id']}"); 
+    }
 
 $songs = $db->query("SELECT * FROM songs");
 $songs = $songs->fetch_all(MYSQLI_ASSOC);
@@ -45,15 +50,17 @@ $songs = $songs->fetch_all(MYSQLI_ASSOC);
                 <td><?= $song['year'] ?></td>
                 <td><?= $song['youtube_link'] ?></td>
                 <td><?= $song['created_at'] ?></td>
+               
+                <td></td>
             </tr>
             <?php endforeach; ?>
     </tbody>
 </table>
 
 
-<form method="POST">
+<form method="POST" class="admin">
 <div class= "mb-3">
-    <label for="">Song Name:</label>
+    <label>Song Name:</label>
     <input type="text" name="name" class="form-control">
 </div>
 <div class= "mb-3">
@@ -72,5 +79,5 @@ $songs = $songs->fetch_all(MYSQLI_ASSOC);
     <label for="">Youtube Link:</label>
     <input type="text" name="youtube_link" class="form-control">
 </div>
-<button class="btn btn-danger">Add song</button>
+<button class="btn btn-dark">Add song</button>
 </form>

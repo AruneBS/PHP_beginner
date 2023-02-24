@@ -23,10 +23,14 @@ try {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rell="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="style/login.css" rel="stylesheet">
 </head>
 
 
 <body>
+    <?php
+include('views/format/header.php')
+?>
     <div class="container">
         <?php if (isset($_GET['message'])) : ?>
             <div class="alert alert-<?= $_GET['status']; ?>">
@@ -47,9 +51,13 @@ try {
             case 'admin':
                 include './views/pages/admin.php';
                 break;
+                case 'user_playlist':
+                include './views/pages/user_playlist.php';
+                break;
             case 'playlist':
                 include './views/pages/playlist.php';
                 break;
+                
             default:
                 include './views/pages/main.php';
         }
