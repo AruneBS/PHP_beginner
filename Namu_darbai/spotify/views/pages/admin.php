@@ -33,15 +33,11 @@ $allowedTypes = ['image/jpeg' , 'image/png', 'image/gif' , 'image/webp'];
        }   
     
     move_uploaded_file($_FILES['photo']['tmp_name'], './uploads/' . $filename);
-    $params = [
-            
-        'message' => 'Photo successfully added',
-        'status' => 'success'
-    ];
+    
 
    
     $_POST['photo'] = $filename;
-print_r($_POST);
+
     }
 
     $query = vsprintf("INSERT INTO songs (title, author, album, year, youtube_link, photo) VALUES ('%s', '%s', '%s', '%s', '%s', '%s')",
