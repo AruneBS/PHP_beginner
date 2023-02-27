@@ -32,12 +32,15 @@ $songs = $songs->fetch_all(MYSQLI_ASSOC);
 
 if (isset($_GET['action']) AND $_GET['action']=== 'delete') {
     $delete = $db->query("DELETE FROM playlist WHERE id = {$_GET['id']}"); 
-    print_r($_GET);
+   
 }
 
 
 
 ?>
+<div>
+    <a href="?page=logout" class="btn btn-danger float-end">Log Out</a>
+</div>
 
 <aside>
     <form method="POST">

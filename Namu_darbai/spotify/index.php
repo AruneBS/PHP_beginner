@@ -57,7 +57,10 @@ include('views/format/header.php')
             case 'playlist':
                 include './views/pages/playlist.php';
                 break;
-                
+                case 'logout':
+                    session_destroy();
+                    include './views/pages/login.php';
+                    break;
             default:
                 include './views/pages/main.php';
         }
