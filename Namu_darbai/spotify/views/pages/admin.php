@@ -11,18 +11,20 @@ if (isset($_GET['action']) and $_GET['action'] === 'delete') {
 
 
 if (!empty($_POST)) {
+    $_POST['photo'] = '';
 
-    if(!isset($_FILES['photo'])){
+    if(isset($_FILES['photo'])){
         if(!is_dir('./uploads')){
             mkdir('./uploads');
         }
 
 $filename= explode('.', $_FILES['photo']['name']);
+
 $filename = time() . '.' . $filename[count($filename)-1];
 
 $allowedTypes = ['image/jpeg' , 'image/png', 'image/gif' , 'image/webp'];
 
-       if(!in_array($_FILES['photo']['type'], $allowedTypes)){
+       if(!in_array($_FILES['photo']['type'], $allowedTypes)){echo $filename;
         $params = [
             
             'message' => 'Incorrect file format',
@@ -35,7 +37,6 @@ $allowedTypes = ['image/jpeg' , 'image/png', 'image/gif' , 'image/webp'];
     move_uploaded_file($_FILES['photo']['tmp_name'], './uploads/' . $filename);
     
 
-   
     $_POST['photo'] = $filename;
 
     }

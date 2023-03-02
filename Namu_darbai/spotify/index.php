@@ -51,9 +51,6 @@ include('views/format/header.php')
             case 'admin':
                 include './views/pages/admin.php';
                 break;
-                case 'user_playlist':
-                include './views/pages/user_playlist.php';
-                break;
             case 'playlist':
                 include './views/pages/playlist.php';
                 break;
