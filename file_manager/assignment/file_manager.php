@@ -38,7 +38,7 @@ if (isset($_GET['dir']) and $_GET['dir'] != '') {
             $back = './';
         }
         $back = '<tr> 
-     <td colspan = "2"><a href="?dir=' . $back . '">Back</a></td>
+     <td colspan = "4"><a href="?dir=' . $back . '">Back</a></td>
      <tr>';
     }
 }
@@ -150,8 +150,8 @@ unset($data[1]);
         <table class="table">
             <thead>
                 <tr >
-                    <th>Name</th>
-                    <th>Actions</th>
+                    <th colspan="2">Name</th>
+                    <th colspan="2">Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -213,8 +213,8 @@ unset($data[1]);
                             }
                             ?>
                         </td>
-                        <td><a href="?edit=<?= $path ?>&dir=<?= $dir ?>" class="btn btn-success">Edit</a></td>
-                        <td><a href="?delete=<?= $path ?>&dir=<?= $dir ?>" class="btn btn-danger">Delete</a></td>
+                        <td><a href="?edit=<?= $path ?>&dir=<?= $dir ?>" class="btn btn-success"><i class="bi bi-pen"></i></a></td>
+                        <td><a href="?delete=<?= $path ?>&dir=<?= $dir ?>" class="btn btn-danger"><i class="bi bi-trash3"></i></a></td>
 
                     </tr>
                 <?php } ?>
