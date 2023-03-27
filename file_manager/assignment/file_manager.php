@@ -38,7 +38,7 @@ if (isset($_GET['dir']) and $_GET['dir'] != '') {
             $back = './';
         }
         $back = '<tr> 
-     <td colspan = "3"><a href="?dir=' . $back . '">Back</a></td>
+     <td colspan = "2"><a href="?dir=' . $back . '">Back</a></td>
      <tr>';
     }
 }
@@ -138,7 +138,8 @@ unset($data[1]);
 </head>
 
 <body>
-    <div class="container py-4">
+    <div class="container">
+    <h1 class="mt-3 mb-3">File Manager</h1>
         <?php if (isset($_GET['m']) and $_GET['m'] != '') { ?>
 
 
@@ -148,10 +149,7 @@ unset($data[1]);
         <?php } ?>
         <table class="table">
             <thead>
-                <tr>
-                    <th>
-                        <input type="checkbox">
-                    </th>
+                <tr >
                     <th>Name</th>
                     <th>Actions</th>
                 </tr>
