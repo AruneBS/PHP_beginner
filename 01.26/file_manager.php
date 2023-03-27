@@ -179,7 +179,10 @@ unset($data[1]);
                         'svg' => 'filetype-svg',
                         'png' => 'filetype-png',
                         'gif' => 'filetype-gif',
-                        'php' => 'filetype-php'
+                        'php' => 'filetype-php',
+                        'mp4' => 'filetype-mp4',
+                        'HEIC' => 'filetype-heic',
+                        'm4p' => 'filetype-m4p'
 
                     ];
 
@@ -198,6 +201,9 @@ unset($data[1]);
                     }
                 ?>
                     <tr>
+                        <td>
+                            <input type ="checkbox">
+                        </td>
                         <td>
                             <i class="bi bi-<?= $icon ?>"></i>
                             <?php
