@@ -76,7 +76,7 @@ if (isset($_POST['file_name_edited']) and $_POST['file_name_edited'] != '') {
 
 
 if (isset($_GET['delete']) and $_GET['delete'] != '') {
-   
+
 
     if ($_GET['delete'] === basename(__FILE__)) {
         header('Location: ?dir=' . $dir . '&m= Cannot delete main file');
@@ -89,16 +89,14 @@ if (isset($_GET['delete']) and $_GET['delete'] != '') {
 }
 
 //Failo ikelimas
-if(isset($_FILES['file_upload']) AND count($_FILES['file_upload']) > 0){
-   $tmpFile = $_FILES['file_upload']['tmp_name'];
+if (isset($_FILES['file_upload']) and count($_FILES['file_upload']) > 0) {
+    $tmpFile = $_FILES['file_upload']['tmp_name'];
     $target = $dir === './' ? $_FILES['file_upload']['name'] : $dir .  '/' . $_FILES['file_upload']['name'];
     header('Location: ' . $_SERVER['REQUEST_URI']);
 
 
     //Funkcija skirta perkelti faila is laikinos saugyklos i norima direktorija.
-move_uploaded_file($tmpFile, $target);
-
-   
+    move_uploaded_file($tmpFile, $target);
 }
 
 
@@ -151,8 +149,11 @@ unset($data[1]);
         <table class="table">
             <thead>
                 <tr>
+                    <th>
+                        <input type="checkbox">
+                    </th>
                     <th>Name</th>
-                    <th colspan="2">Actions</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -202,18 +203,17 @@ unset($data[1]);
                 ?>
                     <tr>
                         <td>
-                            <input type ="checkbox">
+                            <input type="checkbox">
                         </td>
                         <td>
                             <i class="bi bi-<?= $icon ?>"></i>
                             <?php
-                            if(is_dir($path)){
-                              echo  '<a href="?dir=' . $path . '">' . $documents. '</a>';
-                            } else{
-                              echo  '<a href="' . $path. '" target="_blank">' . $documents . '</a>' ;
-
+                            if (is_dir($path)) {
+                                echo  '<a href="?dir=' . $path . '">' . $documents . '</a>';
+                            } else {
+                                echo  '<a href="' . $path . '" target="_blank">' . $documents . '</a>';
                             }
-               ?>
+                            ?>
                         </td>
                         <td><a href="?edit=<?= $path ?>&dir=<?= $dir ?>" class="btn btn-success">Edit</a></td>
                         <td><a href="?delete=<?= $path ?>&dir=<?= $dir ?>" class="btn btn-danger">Delete</a></td>
@@ -239,7 +239,7 @@ unset($data[1]);
         <?php } else { ?>
 
             <h2>Create New File/Folder</h2>
-            <form method="POST" enctype = "multipart/form-data">
+            <form method="POST" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label>Select data type</label>
                     <select name="data_type" class="form-control">
